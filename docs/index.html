@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscription — Communauté CSC Côte d'Ivoire | AS-SBC</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #e8f5f0;
+    min-height: 100vh;
+    padding: 30px 16px 60px;
+  }
+  .page-wrap { max-width: 640px; margin: 0 auto; }
+
+  .logo-header {
+    background: #0E2841;
+    border-radius: 12px 12px 0 0;
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 5px solid #0EA695;
+  }
+  .logo-box {
+    background: white;
+    border-radius: 8px;
+    padding: 8px 14px;
+    flex-shrink: 0;
+    font-weight: 800;
+    font-size: 22px;
+    color: #0E2841;
+    letter-spacing: 1px;
+  }
+  .logo-box span { color: #0EA695; }
+  .header-text { color: white; }
+  .header-text .org { font-size: 10px; color: #0EA695; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+  .header-text .chapter { font-size: 19px; font-weight: 800; color: white; line-height: 1.25; }
+  .header-text .chapter span { color: #4EA72E; }
+
+  .form-card {
+    background: white;
+    border-radius: 0 0 12px 12px;
+    padding: 30px 32px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+  }
+
+  .stats-bar {
+    display: flex;
+    background: #0E2841;
+    border-radius: 8px;
+    margin-bottom: 22px;
+    overflow: hidden;
+  }
+  .stat { flex:1; text-align:center; padding:11px 6px; border-right:1px solid rgba(255,255,255,0.1); }
+  .stat:last-child { border-right:none; }
+  .sn { font-size:18px; font-weight:800; color:#0EA695; display:block; }
+  .sl { font-size:9.5px; color:#aaa; display:block; margin-top:2px; }
+
+  .intro {
+    background: #f0faf8;
+    border-left: 4px solid #0EA695;
+    padding: 13px 16px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 26px;
+    font-size: 13.5px;
+    color: #2a4a3a;
+    line-height: 1.65;
+  }
+  .intro strong { color: #0E2841; }
+  .intro a { color: #0EA695; font-weight: 600; text-decoration: none; }
+
+  .form-group { margin-bottom: 20px; }
+  label {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #0E2841;
+    margin-bottom: 6px;
+  }
+  label .req { color: #E97132; }
+  label .hint {
+    display: block;
+    font-weight: 400;
+    font-size: 11.5px;
+    color: #888;
+    margin-top: 2px;
+  }
+  input, select {
+    width: 100%;
+    padding: 11px 13px;
+    border: 2px solid #dde8e4;
+    border-radius: 7px;
+    font-size: 14.5px;
+    color: #1a2433;
+    background: #fafafa;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    font-family: inherit;
+  }
+  input:focus, select:focus {
+    border-color: #0EA695;
+    background: white;
+  }
+  .divider { height:1px; background:#eee; margin: 24px 0; }
+
+  .submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: #0EA695;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: inherit;
+    letter-spacing: 0.2px;
+  }
+  .submit-btn:hover { background: #0c8a7e; }
+  .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+  .privacy {
+    text-align: center;
+    font-size: 11.5px;
+    color: #aaa;
+    margin-top: 13px;
+    line-height: 1.5;
+  }
+
+  .success-box {
+    display: none;
+    background: white;
+    border-radius: 12px;
+    padding: 50px 32px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+  }
+  .check-circle {
+    width: 70px; height: 70px;
+    background: #0EA695;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 18px;
+    font-size: 32px;
+    color: white;
+  }
+  .success-box h2 { color: #0E2841; font-size: 22px; margin-bottom: 12px; }
+  .success-box p { color: #555; font-size: 13.5px; line-height: 1.7; margin-bottom: 6px; }
+  .cta-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 13px 30px;
+    background: #4EA72E;
+    color: white;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  .cta-btn:hover { background: #3d8a22; }
+
+  .footer {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 11.5px;
+    color: #999;
+    line-height: 1.8;
+  }
+  .footer a { color: #0EA695; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- HEADER -->
+  <div class="logo-header">
+    <div class="logo-box">
+      AS‑<span>SBC</span>
+    </div>
+    <div class="header-text">
+      <div class="org">AS-SBC · African Society for Social & Behavior Change</div>
+      <div class="chapter">Chapitre <span>Côte d'Ivoire</span><br>Communauté CSC</div>
+    </div>
+  </div>
+
+  <!-- FORMULAIRE -->
+  <div class="form-card" id="formCard">
+
+    <div class="stats-bar">
+      <div class="stat"><span class="sn">18</span><span class="sl">Pays actifs</span></div>
+      <div class="stat"><span class="sn">1000+</span><span class="sl">Praticiens</span></div>
+      <div class="stat"><span class="sn">Gratuit</span><span class="sl">Inscription</span></div>
+      <div class="stat"><span class="sn">2 min</span><span class="sl">Pour s'inscrire</span></div>
+    </div>
+
+    <div class="intro">
+      <strong>Bienvenue !</strong> Ce formulaire vous permet de rejoindre la communauté des praticiens du Changement Social et Comportemental (CSC) en Côte d'Ivoire.<br><br>
+      L'inscription est <strong>gratuite</strong>. Après soumission, vous serez invité(e) à créer votre profil officiel sur <a href="https://members.as-sbc.org/register" target="_blank">members.as-sbc.org/register</a>
+    </div>
+
+    <form id="inscriptionForm" onsubmit="submitForm(event)">
+
+      <div class="form-group">
+        <label>Nom et Prénoms <span class="req">*</span></label>
+        <input type="text" id="nom" placeholder="Ex. : Koné Aminata" required />
+      </div>
+
+      <div class="form-group">
+        <label>
+          Spécialité / Domaine d'expertise <span class="req">*</span>
+          <span class="hint">Ex. : Santé publique, Communication, Nutrition, Suivi-Évaluation, Sciences sociales...</span>
+        </label>
+        <input type="text" id="specialite" placeholder="Votre domaine principal" required />
+      </div>
+
+      <div class="form-group">
+        <label>
+          Structure / Organisation / École <span class="req">*</span>
+          <span class="hint">ONG, Ministère, Université, Entreprise, Consultant indépendant...</span>
+        </label>
+        <input type="text" id="structure" placeholder="Nom de votre organisation ou établissement" required />
+      </div>
+
+      <div class="form-group">
+        <label>Région / Ville <span class="req">*</span></label>
+        <select id="ville" required>
+          <option value="" disabled selected>-- Sélectionnez votre ville --</option>
+          <option value="abidjan">Abidjan</option>
+          <option value="bouake">Bouaké</option>
+          <option value="yamoussoukro">Yamoussoukro</option>
+          <option value="san_pedro">San-Pédro</option>
+          <option value="korhogo">Korhogo</option>
+          <option value="daloa">Daloa</option>
+          <option value="man">Man</option>
+          <option value="gagnoa">Gagnoa</option>
+          <option value="abengourou">Abengourou</option>
+          <option value="divo">Divo</option>
+          <option value="autre_ci">Autre ville de Côte d'Ivoire</option>
+          <option value="hors_ci">Hors Côte d'Ivoire (diaspora)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>
+          Numéro de téléphone <span class="req">*</span>
+          <span class="hint">WhatsApp de préférence</span>
+        </label>
+        <input type="tel" id="telephone" placeholder="+225 07 XX XX XX XX" required />
+      </div>
+
+      <div class="form-group">
+        <label>Adresse e-mail <span class="req">*</span></label>
+        <input type="email" id="email" placeholder="votre.email@exemple.com" required />
+      </div>
+
+      <div class="divider"></div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">
+        ✅ &nbsp; Je rejoins la Communauté CSC — Côte d'Ivoire
+      </button>
+
+      <p class="privacy">
+        Vos informations sont utilisées uniquement pour les activités AS-SBC Côte d'Ivoire.<br>
+        Elles ne seront jamais partagées à des tiers sans votre accord.
+      </p>
+    </form>
+  </div>
+
+  <!-- ZONE DE SUCCÈS / ERREUR -->
+  <div class="success-box" id="successBox">
+    <div class="check-circle" id="checkCircle">✓</div>
+    <h2 id="resultTitle">Inscription confirmée !</h2>
+    <p id="resultMessage">Merci de rejoindre la communauté CSC de Côte d'Ivoire.<br>
+    Boris Gbehi vous contactera très prochainement.</p>
+    <p style="margin-top:10px;">En attendant, créez votre profil officiel AS-SBC :</p>
+    <a class="cta-btn" href="https://members.as-sbc.org/register" target="_blank">
+      → Créer mon profil sur members.as-sbc.org
+    </a>
+    <p style="margin-top:28px; font-size:13px; color:#777;">
+      <strong>Boris Gbehi</strong> — Coordinateur Pays Côte d'Ivoire, AS-SBC<br>
+      borisg@genesis-analytics.com
+    </p>
+  </div>
+
+  <div class="footer">
+    <a href="https://as-sbc.org" target="_blank">as-sbc.org</a> &nbsp;·&nbsp;
+    <a href="https://members.as-sbc.org/register" target="_blank">members.as-sbc.org/register</a><br>
+    © 2026 African Society for Social & Behavior Change — Chapitre Côte d'Ivoire
+  </div>
+
+</div>
+
+<script>
+// ============================================================
+// ⚠️ À FAIRE : remplacez cette URL par l'adresse de VOTRE API
+// FastAPI (celle avec la route /submit que vous avez déjà).
+// Exemples possibles :
+//   - en local (test)      : "http://localhost:5000/submit"
+//   - déployée sur Render   : "https://votre-app.onrender.com/submit"
+//   - déployée sur Railway  : "https://votre-app.up.railway.app/submit"
+//
+// Aucun token Kobo n'est mis ici : c'est votre API qui se connecte
+// à Kobo de son côté (avec KOBO_PASSWORD en variable d'environnement
+// serveur), donc rien de sensible n'est exposé dans cette page.
+// ============================================================
+const API_URL = "https://kobo-relay.onrender.com/submit";
+
+async function submitForm(e) {
+  e.preventDefault();
+
+  const nom = document.getElementById('nom').value.trim();
+  const specialite = document.getElementById('specialite').value.trim();
+  const structure = document.getElementById('structure').value.trim();
+  const ville = document.getElementById('ville').value;
+  const telephone = document.getElementById('telephone').value.trim();
+  const email = document.getElementById('email').value.trim();
+
+  if (!ville) {
+    alert('Veuillez sélectionner une ville.');
+    return;
+  }
+
+  const submitBtn = document.getElementById('submitBtn');
+  submitBtn.disabled = true;
+  submitBtn.textContent = '⏳ Envoi en cours...';
+
+  // Les clés ci-dessous DOIVENT correspondre exactement aux noms
+  // de questions de votre XLSForm (colonne "name" dans l'onglet survey) :
+  // nom, specialite, structure, ville, telephone, email
+  const data = { nom, specialite, structure, ville, telephone, email };
+
+  try {
+    const response = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+
+    if (!response.ok || result.error || result.success === false) {
+      throw new Error(result.error || `Erreur serveur (${response.status})`);
+    }
+
+    // Succès
+    document.getElementById('formCard').style.display = 'none';
+    document.getElementById('successBox').style.display = 'block';
+    document.getElementById('resultTitle').textContent = '✅ Inscription confirmée !';
+    document.getElementById('checkCircle').style.background = '#0EA695';
+    document.getElementById('resultMessage').innerHTML =
+      'Merci de rejoindre la communauté CSC de Côte d\'Ivoire.<br>Boris Gbehi vous contactera très prochainement.';
+
+  } catch (error) {
+    console.error('Erreur soumission:', error);
+    document.getElementById('formCard').style.display = 'none';
+    document.getElementById('successBox').style.display = 'block';
+    document.getElementById('resultTitle').textContent = '⚠️ Problème technique';
+    document.getElementById('checkCircle').style.background = '#E97132';
+    document.getElementById('resultMessage').innerHTML =
+      'Votre inscription n\'a pas pu être enregistrée.<br>Veuillez réessayer ou contacter l\'administrateur.<br><br><strong>Détail :</strong> ' + error.message;
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = '✅ Je rejoins la Communauté CSC — Côte d\'Ivoire';
+    window.scrollTo(0,0);
+  }
+}
+</script>
+</body>
+</html>
