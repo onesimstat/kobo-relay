@@ -178,7 +178,7 @@
   <!-- HEADER -->
   <div class="logo-header">
     <div class="logo-box">
-      AS‑<span>SBC</span>
+      <img src="as-sbc-logo-transparent.png" alt="AS-SBC" style="height:34px; display:block;">
     </div>
     <div class="header-text">
       <div class="org">AS-SBC · African Society for Social & Behavior Change</div>
@@ -272,15 +272,14 @@
   <!-- ZONE DE SUCCÈS / ERREUR -->
   <div class="success-box" id="successBox">
     <div class="check-circle" id="checkCircle">✓</div>
-    <h2 id="resultTitle">Inscription confirmée !</h2>
-    <p id="resultMessage">Merci de rejoindre la communauté CSC de Côte d'Ivoire.<br>
-    Boris Gbehi vous contactera très prochainement.</p>
-    <p style="margin-top:10px;">En attendant, créez votre profil officiel AS-SBC :</p>
+    <h2 id="resultTitle">Bienvenue dans la communauté CSC Côte d'Ivoire !</h2>
+    <p id="resultMessage">Dr Boris Gbehi prendra contact avec vous sous peu.<br>
+    En attendant, finalisez votre inscription en créant votre profil officiel <strong>African Society for Social &amp; Behavior Change</strong> (Société Africaine pour le Changement Social et Comportemental).</p>
     <a class="cta-btn" href="https://members.as-sbc.org/register" target="_blank">
       → Créer mon profil sur members.as-sbc.org
     </a>
     <p style="margin-top:28px; font-size:13px; color:#777;">
-      <strong>Boris Gbehi</strong> — Coordinateur Pays Côte d'Ivoire, AS-SBC<br>
+      <strong>Dr Boris Gbehi</strong>, Coordinateur Pays Côte d'Ivoire, AS-SBC<br>
       borisg@genesis-analytics.com
     </p>
   </div>
@@ -348,10 +347,10 @@ async function submitForm(e) {
     // Succès
     document.getElementById('formCard').style.display = 'none';
     document.getElementById('successBox').style.display = 'block';
-    document.getElementById('resultTitle').textContent = '✅ Inscription confirmée !';
+    document.getElementById('resultTitle').textContent = 'Bienvenue dans la communauté CSC Côte d\'Ivoire !';
     document.getElementById('checkCircle').style.background = '#0EA695';
     document.getElementById('resultMessage').innerHTML =
-      'Merci de rejoindre la communauté CSC de Côte d\'Ivoire.<br>Boris Gbehi vous contactera très prochainement.';
+      'Dr Boris Gbehi prendra contact avec vous sous peu.<br>En attendant, finalisez votre inscription en créant votre profil officiel <strong>African Society for Social &amp; Behavior Change</strong> (Société Africaine pour le Changement Social et Comportemental).';
 
   } catch (error) {
     console.error('Erreur soumission:', error);
